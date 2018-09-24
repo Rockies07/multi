@@ -1,0 +1,44 @@
+<?php
+// Create the mysql backup file
+// edit this section
+/*$dbhost = "localhost"; // usually localhost
+$dbuser = "henrynew_daccoun";
+$dbpass = "4rfv5tgb";
+$dbname = "henrynew_mymerz";
+$sendto = "Webmaster <asher.anng@yahoo.com>";
+$sendfrom = "Automated Backup <asher.anng@yahoo.com>";
+$sendsubject = "Daily Mysql Backup";
+$bodyofemail = "Here is the daily backup.";*/
+$dbhost = "localhost"; // usually localhost
+$dbuser = "4d";
+$dbpass = "goodluck199";
+$dbname = "billbase";
+$sendto = "Webmaster <amasangqe26@gmail.com>";
+$sendfrom = "Automated Backup <webmasterandro@yahoo.com>";
+$sendsubject = "Daily Mysql Backup";
+$bodyofemail = "Here is the daily backup.";
+
+// don't need to edit below this section
+$backupfile = $dbname . date("Y-m-d") . '.sql';
+$backupzip = $backupfile . '.tar.gz';
+system("mysqldump -h $dbhost -u $dbuser -p$dbpass $dbname > $backupfile");
+system("tar -czvf $backupzip $backupfile");
+
+// Mail the file
+
+    include('Mail.php');
+    include('Mail/mime.php');
+
+	$message = new Mail_mime();
+	$text = "$bodyofemail";
+	$message->setTXTBody($text);
+	$message->AddAttachment($backupzip);
+    	$body = $message->get();
+        $extraheaders = array("From"=>"$sendfrom", "Subject"=>"$sendsubject");
+        $headers = $message->headers($extraheaders);
+    $mail = Mail::factory("mail");
+    $mail->send("$sendto", $headers, $body);
+
+// Delete the file from your server
+unlink($backupfile);
+?>

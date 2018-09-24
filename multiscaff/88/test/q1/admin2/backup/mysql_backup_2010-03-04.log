@@ -1,0 +1,17 @@
+2010-03-04 18:55:39: Executing MySQL Backup Script v1.4
+2010-03-04 18:55:39: Processing Databases..
+2010-03-04 18:56:34: Dumped DB: 4d
+2010-03-04 18:56:34: COMPRESSION FAILED
+bzip2: Output file /home/www/backup/Mail/4d.sql.bz2 already exists.
+2010-03-04 18:56:35: Dumped DB: billbase
+2010-03-04 18:56:35: Compressed DB: billbase
+2010-03-04 18:56:35: Dumped DB: mysql
+2010-03-04 18:56:35: Compressed DB: mysql
+2010-03-04 18:56:35: Dumped DB: test
+2010-03-04 18:56:35: Compressed DB: test
+2010-03-04 18:56:35: Archiving files..
+2010-03-04 18:56:49: Backup complete!
+2010-03-04 18:56:49: *** ERRORS DETECTED! ***
+Check your email account user@domain.com for more information!
+2010-03-04 18:56:49: There were errors!
+2010-03-04 18:56:49: Emailing error log to user@domain.com ..

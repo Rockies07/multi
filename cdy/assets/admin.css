@@ -1,0 +1,49 @@
+
+input {
+	font: 10pt/normal tahoma; 
+	border: 1px solid rgb(64, 64, 64); 
+	font-size-adjust: none; 
+	font-stretch: normal;
+	background-color:black;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+
+}
+
+table, th, td
+{
+	color: rgb(192, 192, 192);
+	background-color:black;
+}
+
+select{
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgb(64, 64, 64);
+	font-size-adjust: none; 
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background-color: black;
+}
+
+.wcolor{
+	color:white;
+}
+
+.day1{
+	color:#CC0000;
+}
+.day2{
+	color:#F7FE2E;
+}
+.day3{
+	color:#33CCFF;
+}
+.day6{
+	color:#CC00CC;
+}
+.day7{
+	color:#33CC00;
+}
